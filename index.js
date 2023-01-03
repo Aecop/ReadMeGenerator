@@ -8,7 +8,7 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: '!!REQUIRE!! What will be your title for the project?',
+        question: '!!REQUIRE!! What will be your title for the project?',
         validate: inputTitle => {
             if (inputTitle) {
                 return true;
@@ -21,7 +21,7 @@ const questions = [
     {
         type: 'input',
         name: 'githubName',
-        message: '!!REQUIRE!! What is your Github Username?',
+        question: '!!REQUIRE!! What is your Github Username?',
         validate: githubInput => {
             if (githubInput){
                 return true
@@ -34,7 +34,7 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: '!!REQUIRE!! What is your email address?',
+        question: '!!REQUIRE!! What is your email address?',
         validate: emailInput => {
             if (emailInput){
                 return true;
@@ -47,7 +47,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Please provide instructions and examples for use.',
+        question: 'Please provide instructions and examples for use.',
         validate: usageInput => {
             if (usageInput) {
                 return true;
@@ -60,13 +60,13 @@ const questions = [
     {
         type: 'list',
         name: 'license',
-        message: 'Which license will you use for your project?',
+        question: 'Which license will you use for your project?',
         choices: ['agpl', 'apache', 'mit', 'no license']
     },
     {
         type: 'confirm',
         name: 'confirmContributers',
-        message: 'Can other devleoper contribute to this project?',
+        question: 'Can other devleoper contribute to this project?',
         default: true
     }
 ];
@@ -75,7 +75,7 @@ const questions = [
 // TODO: Create a function to write README file
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('README.md',fileContent, err => {
+        fs.writeFile('./dist/generated-readme.md', fileContent, err => {
             if (err) {
                 reject(err);
                 return;
@@ -83,12 +83,11 @@ const writeToFile = fileContent => {
             resolve({
                 correct: true,
                 message: 'File has been created',
-
             });
 
         });
     });
-}
+
 
 // Prompt to ask user for question and input
 const init = () => {
@@ -110,7 +109,7 @@ init()
     .catch(err => {
         console.log(err)
     })
-
+}
 
 
 
