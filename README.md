@@ -20,6 +20,10 @@
   
   User are to type `node index.js` in terminal/cmd, it will run the readme.md generator. After answering prompts in the screen, it will process data of user input and stores user input to the readme file and generate nice and clean file structure for the users.
   
+  Demostration Video:
+  [link](https://watch.screencastify.com/v/xvIbfA1JAv7XpxpqEYjc)
+
+
   ## [License]  mit
   [badge] mit
   [mit] https://choosealicense.com/licenses/mit/
