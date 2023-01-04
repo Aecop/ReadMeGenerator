@@ -34,21 +34,21 @@ function generateMarkdown(data) {
   # ${data.title}
  
   ## Table of Content
-  * [Description](#description)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Test](#test)
-  * [Contact](#contact)
+  * [Description](#Description)
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Test](#Test)
+  * [Contact](#Contact)
 
-  ## [Description](#Table of Contents)
+  ## [Description]
   
   ${data.description}
   
-  ## [Installation](#Table of Contents)
+  ## [Installation]
   
   ${data.installation}
   
-  ## [Usage](#Table of Contents)
+  ## [Usage]
   
   ${data.usage}
   
@@ -56,11 +56,11 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
   ${renderLicenseLink(data.license)}
   
-  ## [Test](#Table of Contents)
+  ## [Test]
   
   ${data.test}
   
-  ## [Contact](#Table of Content)
+  ## [Contact]
   [GitHub](https://github.com/${data.githubUsername})
   [Email: ${data.email}](mailto:${data.email})
 `;
