@@ -20,7 +20,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'githubName',
+        name: 'githubUsername',
         message: '!!REQUIRE!! What is your Github Username?',
         validate: githubInput => {
             if (githubInput){
@@ -47,12 +47,64 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Please provide instructions and examples for use.',
+        message: '!!REQUIRE!! Please provide instructions and examples for use.',
         validate: usageInput => {
             if (usageInput) {
                 return true;
             } else {
                 console.log('Please enter your use instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: '!!REQUIRE!! Please provide description of the project!',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please write description!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Please provide step-by-step installation instructions for your project. (Required)',
+        validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log('Please enter your installation instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: '!!REQUIRE!! Please provide instructions and examples for use.',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please enter your use instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: '!!REQUIRE!! Please provide instructions on how to test the app.',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('Please enter your use test instructions!');
                 return false;
             }
         }
@@ -66,7 +118,7 @@ const questions = [
     {
         type: 'confirm',
         name: 'confirmContributers',
-        message: 'Can other devleoper contribute to this project?',
+        message: 'Can other develeoper contribute to this project?',
         default: true
     }
 ];
@@ -75,7 +127,7 @@ const questions = [
 // TODO: Create a function to write README file
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('generated-readme.md', fileContent, err => {
+        fs.writeFile('GeneratedREADME.md', fileContent, err => {
             if (err) {
                 reject(err);
                 return;
@@ -106,9 +158,7 @@ init()
     .then(pageMD => {
         return writeToFile(pageMD);
     })
-    .catch(err => {
-        console.log(err)
-    })
+
 
 
 
