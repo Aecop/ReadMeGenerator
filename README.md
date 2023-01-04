@@ -6,7 +6,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Test](#test)
-  * [Contact]
+  * [Contact](#Contact)
 
   ## [Description](#Table of Contents)
   
